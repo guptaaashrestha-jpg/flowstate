@@ -2,12 +2,22 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const helmet = require('helmet');
+const compression = require('compression');
+const rateLimit = require('express-rate-limit');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(helmet({ contentSecurityPolicy: false }));
+app.use(compression());
 app.use(cors());
 app.use(express.json());
+
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100
+});
 
 // Serve static frontend files
 app.use(express.static(path.join(__dirname)));
@@ -15,7 +25,8 @@ app.use(express.static(path.join(__dirname)));
 const API_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
 const MODEL = 'gemini-2.0-flash';
 
-app.post('/api/generate', async (req, res) => {
+// Apply rate limiter to all API routes
+app.post('/api/generate', apiLimiter, async (req, res) => {
   try {
     const { contents, generationConfig, stream } = req.body;
     const apiKey = process.env.GEMINI_API_KEY;
@@ -71,6 +82,11 @@ app.post('/api/generate', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`FlowState Server running on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`FlowState Server running on http://localhost:${PORT}`);
+  });
+}
+
+// Export for Vercel Serverless deployment
+module.exports = app;
