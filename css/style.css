@@ -2861,3 +2861,10 @@ textarea.input-field {
   }
 }
 
+
+
+/* Accessibility Focus */
+:focus-visible {
+  outline: 2px solid var(--primary) !important;
+  outline-offset: 2px !important;
+}
