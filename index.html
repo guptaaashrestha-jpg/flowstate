@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlowState — AI Productivity Command Center</title>
+  <meta name="description" content="FlowState is an AI-powered productivity command center that automates tasks, plans your day, analyzes meetings, generates content, and summarizes documents. Work smarter, not harder.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Unbounded:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+<!-- Dot Grid Background -->
+<div class="dot-grid"></div>
+
+<!-- ============================================
+     LANDING PAGE
+     ============================================ -->
+<div class="landing-page" id="landing-page">
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="navbar-logo" id="nav-logo">FLOWSTATE</a>
+    <div class="navbar-links">
+      <a href="#features">Product</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+    </div>
+    <div class="navbar-actions">
+      <button class="btn-cta btn-cta-green" id="btn-free-trial" onclick="App.launchApp()">Launch App</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+
+    <!-- Floating Testimonial Bubbles -->
+    <div class="hero-bubbles">
+      <div class="bubble bubble--green">
+        <div class="bubble-avatar">
+          <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Olivia&backgroundColor=ffffff" alt="avatar">
+        </div>
+        <div>
+          <span>No more tab chaos!</span>
+          <div class="bubble-name"><i data-lucide="message-circle" style="width:12px;height:12px;margin-right:4px;"></i> Olivia</div>
+        </div>
+      </div>
+
+      <div class="bubble bubble--white">
+        WORK SMARTER,<br>NOT HARDER
+      </div>
+
+      <div class="bubble bubble--blue">
+        <div class="bubble-avatar">
+          <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Daniel&backgroundColor=ffffff" alt="avatar">
+        </div>
+        <div>
+          <span>Finally, a calendar that says 'no' for you!</span>
+          <div class="bubble-name" style="color: var(--bg-primary)"><i data-lucide="message-circle" style="width:12px;height:12px;margin-right:4px;"></i> Daniel</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative Shapes -->
+    <div class="deco-shape deco-blob deco-blob--green"></div>
+    <div class="deco-shape deco-blob deco-blob--red"></div>
+    <div class="deco-shape deco-star deco-star--1"></div>
+    <div class="deco-shape deco-star deco-star--2"></div>
+    <div class="deco-shape deco-diamond deco-diamond--1"></div>
+
+    <!-- Hero Title -->
+    <div class="hero-title-wrap">
+      <h1 class="sr-only">FlowState — AI Productivity Command Center</h1>
+      <svg class="hero-title-svg" viewBox="0 0 1100 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FLOWSTATE">
+        <!-- F -->
+        <g class="pipe-letter">
+          <path d="M 25 10 V 170" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+          <path d="M 25 10 H 95" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+          <path d="M 25 85 H 78" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+          <circle cx="25" cy="10" r="7.5" fill="#fff"/>
+          <circle cx="25" cy="170" r="7.5" fill="#fff"/>
+          <circle cx="95" cy="10" r="7.5" fill="#fff"/>
+          <circle cx="78" cy="85" r="7.5" fill="#fff"/>
+        </g>
+        <!-- L -->
+        <g class="pipe-letter">
+          <path d="M 120 10 V 170" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+          <path d="M 120 170 H 195" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+          <circle cx="120" cy="10" r="7.5" fill="#fff"/>
+          <circle cx="120" cy="170" r="7.5" fill="#fff"/>
+          <circle cx="195" cy="170" r="7.5" fill="#fff"/>
+        </g>
+        <!-- O -->
+        <g class="pipe-letter">
+          <rect x="215" y="10" width="110" height="160" rx="32" fill="none" stroke="#fff" stroke-width="10"/>
+          <circle cx="247" cy="10" r="7.5" fill="#fff"/>
+          <circle cx="293" cy="10" r="7.5" fill="#fff"/>
+          <circle cx="325" cy="42" r="7.5" fill="#fff"/>
+          <circle cx="325" cy="138" r="7.5" fill="#fff"/>
+          <circle cx="293" cy="170" r="7.5" fill="#fff"/>
+          <circle cx="247" cy="170" r="7.5" fill="#fff"/>
+          <circle cx="215" cy="138" r="7.5" fill="#fff"/>
+          <circle cx="215" cy="42" r="7.5" fill="#fff"/>
+        </g>
+        <!-- W -->
+        <g class="pipe-letter">
+          <path d="M 355 10 L 388 170 L 430 50 L 472 170 L 505 10" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="355" cy="10" r="7.5" fill="#fff"/>
+          <circle cx="388" cy="170" r="7.5" fill="#fff"/>
+          <circle cx="430" cy="50" r="7.5" fill="#fff"/>
+          <circle cx="472" cy="170" r="7.5" fill="#fff"/>
+          <circle cx="505" cy="10" r="7.5" fill="#fff"/>
+        </g>
+        <!-- S -->
+        <g class="pipe-letter">
+          <path d="M 590 28 C 592 0, 525 -2, 525 40 C 525 82, 590 82, 590 130 C 590 175, 523 177, 523 150" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+          <circle cx="590" cy="28" r="7.5" fill="#fff"/>
+          <circle cx="523" cy="150" r="7.5" fill="#fff"/>
+        </g>
+        <!-- T -->
+        <g class="pipe-letter">
+          <path d="M 620 10 H 720" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+          <path d="M 670 10 V 170" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+          <circle cx="620" cy="10" r="7.5" fill="#fff"/>
+          <circle cx="720" cy="10" r="7.5" fill="#fff"/>
+          <circle cx="670" cy="10" r="7.5" fill="#fff"/>
+          <circle cx="670" cy="170" r="7.5" fill="#fff"/>
+        </g>
+        <!-- A -->
+        <g class="pipe-letter">
+          <path d="M 748 170 L 798 10 L 848 170" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M 766 115 H 830" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+          <circle cx="748" cy="170" r="7.5" fill="#fff"/>
+          <circle cx="798" cy="10" r="7.5" fill="#fff"/>
+          <circle cx="848" cy="170" r="7.5" fill="#fff"/>
+          <circle cx="766" cy="115" r="7.5" fill="#fff"/>
+          <circle cx="830" cy="115" r="7.5" fill="#fff"/>
+        </g>
+        <!-- T -->
+        <g class="pipe-letter">
+          <path d="M 878 10 H 978" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+          <path d="M 928 10 V 170" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+          <circle cx="878" cy="10" r="7.5" fill="#fff"/>
+          <circle cx="978" cy="10" r="7.5" fill="#fff"/>
+          <circle cx="928" cy="10" r="7.5" fill="#fff"/>
+          <circle cx="928" cy="170" r="7.5" fill="#fff"/>
+        </g>
+        <!-- E -->
+        <g class="pipe-letter">
+          <path d="M 1010 10 V 170" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+          <path d="M 1010 10 H 1080" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+          <path d="M 1010 90 H 1060" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+          <path d="M 1010 170 H 1080" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+          <circle cx="1010" cy="10" r="7.5" fill="#fff"/>
+          <circle cx="1010" cy="170" r="7.5" fill="#fff"/>
+          <circle cx="1080" cy="10" r="7.5" fill="#fff"/>
+          <circle cx="1060" cy="90" r="7.5" fill="#fff"/>
+          <circle cx="1080" cy="170" r="7.5" fill="#fff"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Tagline -->
+    <p class="hero-tagline">CHAOS, <em>MEET YOUR MATCH!</em></p>
+
+    <!-- Feature Pills -->
+    <div class="hero-pills">
+      <div class="floating-pills-container">
+        <span class="pill-icon"><i data-lucide="zap"></i></span>
+        <span class="pill-icon"><i data-lucide="calendar"></i></span>
+        <span class="pill-icon"><i data-lucide="brain"></i></span>
+        <span class="pill-icon"><i data-lucide="pen-tool"></i></span>
+        <span class="pill-icon"><i data-lucide="file-text"></i></span>
+        <span class="pill-icon"><i data-lucide="crosshair"></i></span>
+      </div>
+      <div class="pill pill--red">
+        <span class="pill-icon"><i data-lucide="zap"></i></span>
+        Smart Task Automation
+      </div>
+      <div class="pill pill--yellow">
+        <span class="pill-icon"><i data-lucide="calendar"></i></span>
+        AI-Powered Scheduling
+      </div>
+      <div class="pill pill--green">
+        <span class="pill-icon"><i data-lucide="brain"></i></span>
+        Meeting Intelligence
+      </div>
+
+      <!-- Decorative Blobs -->
+      <div class="blob-deco blob-deco--1"></div>
+
+      <div class="pill pill--blue">
+        <span class="pill-icon"><i data-lucide="pen-tool"></i></span>
+        Content Generation
+      </div>
+      <div class="pill pill--orange">
+        <span class="pill-icon"><i data-lucide="file-text"></i></span>
+        Document Analysis
+      </div>
+
+      <div class="blob-deco blob-deco--2"></div>
+
+      <div class="pill pill--purple">
+        <span class="pill-icon"><i data-lucide="crosshair"></i></span>
+        AI Command Center
+      </div>
+
+      <div class="blob-deco blob-deco--3"></div>
+    </div>
+
+    <!-- Description -->
+    <div class="hero-desc-wrap">
+      <p class="hero-desc">
+        FlowState is an <strong>AI-POWERED</strong> productivity command center that automates tasks, prioritizes ruthlessly, and focuses on what matters. Powered by <strong>AI that learns your workflow</strong>.
+      </p>
+    </div>
+
+    <!-- Launch Button -->
+    <div class="hero-launch">
+      <button class="btn-launch" id="btn-launch" onclick="App.launchApp()">
+        <i data-lucide="zap" style="margin-right: 8px;"></i> LAUNCH FLOWSTATE
+      </button>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section" id="features">
+    <div class="features-header reveal-up">
+      <h2>YOUR AI-POWERED ARSENAL</h2>
+      <p>Six intelligent modules working together as one unified brain. Each tool shares context, making your entire workflow smarter.</p>
+    </div>
+
+    <div class="bento-grid stagger-group">
+      <!-- Card 1: Wide -->
+      <div class="bento-card bento-wide" data-color="var(--accent-red)">
+        <div class="bento-glow"></div>
+        <div class="bento-content">
+          <div class="bento-icon"><i data-lucide="zap"></i></div>
+          <h3>Smart Task Automation</h3>
+          <p>Speak naturally — AI parses, categorizes, and prioritizes your tasks.</p>
+        </div>
+        <div class="bento-bg-text">AUTO</div>
+      </div>
+
+      <!-- Card 2: Tall -->
+      <div class="bento-card bento-tall" data-color="var(--accent-green)">
+        <div class="bento-glow"></div>
+        <div class="bento-content">
+          <div class="bento-icon"><i data-lucide="brain"></i></div>
+          <h3>Meeting Brain</h3>
+          <p>Structured summaries, action items, decisions, and auto-generated follow-up emails instantly.</p>
+        </div>
+        <div class="bento-bg-text" style="writing-mode: vertical-rl; transform: rotate(180deg);">SYNC</div>
+      </div>
+
+      <!-- Card 3: Standard -->
+      <div class="bento-card" data-color="var(--accent-yellow)">
+        <div class="bento-glow"></div>
+        <div class="bento-content">
+          <div class="bento-icon"><i data-lucide="calendar"></i></div>
+          <h3>Focus Planner</h3>
+          <p>Optimized scheduling for peak energy.</p>
+        </div>
+      </div>
+
+      <!-- Card 4: Standard -->
+      <div class="bento-card" data-color="var(--accent-blue)">
+        <div class="bento-glow"></div>
+        <div class="bento-content">
+          <div class="bento-icon"><i data-lucide="pen-tool"></i></div>
+          <h3>Content Studio</h3>
+          <p>Generate emails and reports in any tone.</p>
+        </div>
+      </div>
+
+      <!-- Card 5: Standard -->
+      <div class="bento-card" data-color="var(--accent-orange)">
+        <div class="bento-glow"></div>
+        <div class="bento-content">
+          <div class="bento-icon"><i data-lucide="file-text"></i></div>
+          <h3>Doc Analyzer</h3>
+          <p>Executive summaries & comprehension Q&A.</p>
+        </div>
+      </div>
+
+      <!-- Card 6: Wide -->
+      <div class="bento-card bento-wide" data-color="var(--accent-purple)">
+        <div class="bento-glow"></div>
+        <div class="bento-content">
+          <div class="bento-icon"><i data-lucide="crosshair"></i></div>
+          <h3>AI Command Center</h3>
+          <p>Natural language commands that route across all modules. Press Ctrl+K and just type.</p>
+        </div>
+        <div class="bento-bg-text">CTRL</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="about-card reveal-up">
+      <div class="about-avatar">
+        <!-- Generates a nice placeholder avatar -->
+        <img src="images/profile.jpeg" alt="Shrestha S Gupta">
+      </div>
+      <div class="about-info stagger-group">
+        <div class="pill pill--green" style="margin-bottom: 16px; display: inline-flex;">
+          <span class="pill-icon"><i data-lucide="laptop"></i></span>
+          Builder
+        </div>
+        <h2>Built with passion</h2>
+        <p>Combining modern web technologies and Artificial Intelligence to create elegant, highly-functional productivity tools.</p>
+        <div class="about-links">
+          <a href="https://github.com/guptaaashrestha-jpg" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/shrestha-s-gupta-9403a2286" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" id="cta">
+    <h2 class="reveal-up">READY TO <span style="color: var(--accent-green)">FLOW</span>?</h2>
+    <p class="reveal-up" style="transition-delay: 0.1s;">Stop juggling tabs. Stop forgetting tasks. Start flowing.</p>
+    <button class="btn-launch reveal-scale" style="transition-delay: 0.2s;" onclick="App.launchApp()"><i data-lucide="zap" style="margin-right: 8px;"></i> LAUNCH FLOWSTATE NOW</button>
+  </section>
+</div>
+
+<!-- API key is hardcoded for demo -->
+
+<!-- ============================================
+     APP DASHBOARD
+     ============================================ -->
+<div class="app-page" id="app-page">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-dot"></span>
+      <span>FLOWSTATE</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Overview</div>
+      <div class="sidebar-nav-item active" data-module="dashboard" onclick="App.navigate('dashboard')">
+        <i data-lucide="layout-dashboard"></i>
+        <span>Dashboard</span>
+      </div>
+
+      <div class="sidebar-section-label">AI Modules</div>
+      <div class="sidebar-nav-item" data-module="tasks" onclick="App.navigate('tasks')">
+        <i data-lucide="check-square"></i>
+        <span>Task Board</span>
+      </div>
+      <div class="sidebar-nav-item" data-module="planner" onclick="App.navigate('planner')">
+        <i data-lucide="calendar-clock"></i>
+        <span>Focus Planner</span>
+      </div>
+      <div class="sidebar-nav-item" data-module="meetings" onclick="App.navigate('meetings')">
+        <i data-lucide="brain"></i>
+        <span>Meeting Brain</span>
+      </div>
+      <div class="sidebar-nav-item" data-module="content" onclick="App.navigate('content')">
+        <i data-lucide="pen-tool"></i>
+        <span>Content Studio</span>
+      </div>
+      <div class="sidebar-nav-item" data-module="docs" onclick="App.navigate('docs')">
+        <i data-lucide="file-search"></i>
+        <span>Doc Analyzer</span>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button class="sidebar-footer-btn" onclick="App.backToLanding()">
+        <i data-lucide="arrow-left"></i>
+        <span>Back to Home</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="main-content" id="main-content">
+
+    <!-- Command Bar Trigger -->
+    <div class="page-header" id="page-header">
+      <div>
+        <h1 id="page-title">Dashboard</h1>
+        <p class="page-header-sub" id="page-subtitle">Welcome back. Here's your productivity overview.</p>
+      </div>
+      <button class="command-bar-trigger" id="command-bar-trigger" onclick="App.openCommandBar()">
+        <i data-lucide="search" style="width:16px;height:16px;"></i>
+        <span>AI Command Bar...</span>
+        <kbd>Ctrl+K</kbd>
+      </button>
+    </div>
+
+    <!-- === DASHBOARD VIEW === -->
+    <div class="module-view active" id="view-dashboard">
+      <div class="dashboard-grid">
+        <div class="stat-card">
+          <div class="stat-card-label">Total Tasks</div>
+          <div class="stat-card-value" id="stat-total-tasks">0</div>
+          <div class="stat-card-change positive" id="stat-tasks-change">
+            <span>↑</span> Track your progress
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Completed Today</div>
+          <div class="stat-card-value" id="stat-completed">0</div>
+          <div class="stat-card-change positive">
+            <span>✓</span> Keep it up
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">AI Interactions</div>
+          <div class="stat-card-value" id="stat-ai-interactions">0</div>
+          <div class="stat-card-change positive">
+            <span>⚡</span> Powered by Gemini
+          </div>
+        </div>
+      </div>
+
+      <h2 class="font-display mb-4" style="font-size:1.2rem; font-weight:700;">Quick Actions</h2>
+      <div class="quick-actions">
+        <div class="quick-action-card card-red" onclick="App.navigate('tasks')">
+          <div class="quick-action-text">
+            <h4>Add Tasks</h4>
+            <p>Use natural language to create and organize tasks</p>
+          </div>
+        </div>
+        <div class="quick-action-card card-yellow" onclick="App.navigate('planner')">
+          <div class="quick-action-text">
+            <h4>Plan My Day</h4>
+            <p>Let AI optimize your daily schedule</p>
+          </div>
+        </div>
+        <div class="quick-action-card card-green" onclick="App.navigate('meetings')">
+          <div class="quick-action-text">
+            <h4>Analyze Meeting</h4>
+            <p>Extract insights from meeting transcripts</p>
+          </div>
+        </div>
+        <div class="quick-action-card card-blue" onclick="App.navigate('content')">
+          <div class="quick-action-text">
+            <h4>Generate Content</h4>
+            <p>AI-powered writing for emails, reports, and more</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- === TASK BOARD VIEW === -->
+    <div class="module-view" id="view-tasks">
+      <div class="task-input-area">
+        <input
+          type="text"
+          class="input-field input-field-lg"
+          id="task-input"
+          placeholder="Describe your tasks naturally... e.g., 'Review Q3 report by Friday, set up team meeting for Monday'"
+          onkeydown="if(event.key==='Enter') TaskBoard.addTaskFromInput()"
+        >
+        <button class="btn btn-primary" onclick="TaskBoard.addTaskFromInput()" id="btn-add-task">
+          <i data-lucide="sparkles" style="width:16px;height:16px;"></i>
+          AI Parse
+        </button>
+        <button class="btn btn-secondary" onclick="TaskBoard.addManualTask()" id="btn-add-manual">
+          <i data-lucide="plus" style="width:16px;height:16px;"></i>
+          Add
+        </button>
+      </div>
+
+      <div class="kanban-board" id="kanban-board">
+        <div class="kanban-column" id="col-todo">
+          <div class="kanban-column-header">
+            <div class="kanban-column-title">
+              <span class="kanban-column-dot kanban-column-dot--todo"></span>
+              TO DO
+            </div>
+            <span class="kanban-column-count" id="count-todo">0</span>
+          </div>
+          <div class="kanban-cards" id="cards-todo" data-status="todo"></div>
+        </div>
+
+        <div class="kanban-column" id="col-progress">
+          <div class="kanban-column-header">
+            <div class="kanban-column-title">
+              <span class="kanban-column-dot kanban-column-dot--progress"></span>
+              IN PROGRESS
+            </div>
+            <span class="kanban-column-count" id="count-progress">0</span>
+          </div>
+          <div class="kanban-cards" id="cards-progress" data-status="progress"></div>
+        </div>
+
+        <div class="kanban-column" id="col-done">
+          <div class="kanban-column-header">
+            <div class="kanban-column-title">
+              <span class="kanban-column-dot kanban-column-dot--done"></span>
+              DONE
+            </div>
+            <span class="kanban-column-count" id="count-done">0</span>
+          </div>
+          <div class="kanban-cards" id="cards-done" data-status="done"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- === FOCUS PLANNER VIEW === -->
+    <div class="module-view" id="view-planner">
+      <div class="planner-controls">
+        <button class="btn btn-primary" onclick="Planner.planMyDay()" id="btn-plan-day">
+          <i data-lucide="sparkles" style="width:16px;height:16px;"></i>
+          Plan My Day with AI
+        </button>
+        <span class="planner-date" id="planner-date"></span>
+        <button class="btn btn-secondary btn-sm" onclick="Planner.clearSchedule()">Clear</button>
+      </div>
+
+      <div class="input-label">How's your energy today?</div>
+      <div class="energy-selector" id="energy-selector">
+        <div class="energy-option active" data-energy="high" onclick="Planner.setEnergy('high')"><i data-lucide="flame" style="width:16px;height:16px;margin-right:6px"></i> High Energy</div>
+        <div class="energy-option" data-energy="medium" onclick="Planner.setEnergy('medium')"><i data-lucide="zap" style="width:16px;height:16px;margin-right:6px"></i> Medium Energy</div>
+        <div class="energy-option" data-energy="low" onclick="Planner.setEnergy('low')"><i data-lucide="moon" style="width:16px;height:16px;margin-right:6px"></i> Low Energy</div>
+      </div>
+
+      <div class="timeline" id="timeline">
+        <div class="timeline-hours" id="timeline-hours"></div>
+      </div>
+    </div>
+
+    <!-- === MEETING BRAIN VIEW === -->
+    <div class="module-view" id="view-meetings">
+      <div class="meeting-layout">
+        <div class="meeting-input-section">
+          <div class="input-label">Meeting Transcript / Notes</div>
+          <textarea
+            class="input-field"
+            id="meeting-input"
+            placeholder="Paste your meeting transcript or notes here..."
+          ></textarea>
+          <button class="btn btn-primary mt-3 w-full" onclick="Meetings.analyze()" id="btn-analyze-meeting">
+            <i data-lucide="sparkles" style="width:16px;height:16px;"></i>
+            Analyze with AI
+          </button>
+        </div>
+        <div class="meeting-output" id="meeting-output">
+          <div class="empty-state">
+            <div class="empty-state-icon"><i data-lucide="brain"></i></div>
+            <h3>Meeting Brain</h3>
+            <p>Paste your meeting transcript and click "Analyze" to extract summaries, action items, decisions, and follow-up emails.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- === CONTENT STUDIO VIEW === -->
+    <div class="module-view" id="view-content">
+      <div class="content-layout">
+        <div class="content-controls">
+          <div class="input-label">Content Type</div>
+          <div class="content-type-grid" id="content-type-grid">
+            <div class="content-type-option active" data-type="email" onclick="Content.setType('email')">
+              Email
+            </div>
+            <div class="content-type-option" data-type="report" onclick="Content.setType('report')">
+              Report
+            </div>
+            <div class="content-type-option" data-type="social" onclick="Content.setType('social')">
+              Social Post
+            </div>
+            <div class="content-type-option" data-type="proposal" onclick="Content.setType('proposal')">
+              Proposal
+            </div>
+          </div>
+
+          <div class="input-label mt-3">Tone</div>
+          <div class="tone-chips" id="tone-chips">
+            <div class="tone-chip active" data-tone="professional" onclick="Content.setTone('professional')">Professional</div>
+            <div class="tone-chip" data-tone="casual" onclick="Content.setTone('casual')">Casual</div>
+            <div class="tone-chip" data-tone="persuasive" onclick="Content.setTone('persuasive')">Persuasive</div>
+            <div class="tone-chip" data-tone="friendly" onclick="Content.setTone('friendly')">Friendly</div>
+            <div class="tone-chip" data-tone="formal" onclick="Content.setTone('formal')">Formal</div>
+          </div>
+
+          <div class="input-group mt-3">
+            <div class="input-label">What should it be about?</div>
+            <textarea
+              class="input-field"
+              id="content-topic"
+              placeholder="Describe what you need..."
+              style="min-height: 140px;"
+            ></textarea>
+          </div>
+
+          <div class="input-group">
+            <div class="input-label">Additional Context (optional)</div>
+            <input
+              type="text"
+              class="input-field"
+              id="content-context"
+              placeholder="e.g., Client name is Acme Corp, project is 2 weeks behind..."
+            >
+          </div>
+
+          <button class="btn btn-primary w-full" onclick="Content.generate()" id="btn-generate-content">
+            <i data-lucide="sparkles" style="width:16px;height:16px;"></i>
+            Generate with AI
+          </button>
+        </div>
+
+        <div class="content-preview" id="content-preview">
+          <div class="content-preview-header">
+            <span class="font-display" style="font-size:0.9rem;font-weight:700;">Preview</span>
+            <div class="flex gap-2">
+              <button class="btn btn-ghost btn-sm" onclick="Content.copy()" id="btn-copy-content">
+                <i data-lucide="copy" style="width:14px;height:14px;"></i>
+                Copy
+              </button>
+              <button class="btn btn-ghost btn-sm" onclick="Content.regenerate()" id="btn-regen-content">
+                <i data-lucide="refresh-cw" style="width:14px;height:14px;"></i>
+                Redo
+              </button>
+            </div>
+          </div>
+          <div class="content-preview-body" id="content-preview-body">
+            <div class="empty-state" style="padding:40px 20px;">
+              <div class="empty-state-icon"><i data-lucide="pen-tool"></i></div>
+              <h3>Content Studio</h3>
+              <p>Select a content type, set the tone, describe your topic, and let AI write it for you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- === DOC ANALYZER VIEW === -->
+    <div class="module-view" id="view-docs">
+      <div class="doc-layout">
+        <div class="doc-input-section">
+          <div class="input-label">Document Text</div>
+          <textarea
+            class="input-field"
+            id="doc-input"
+            rows="10"
+            placeholder="Paste your document, article, or any text here for AI analysis...&#10;&#10;The AI will extract:&#10;- Executive summary&#10;- Key insights&#10;- Action items&#10;- Comprehension Q&A"
+          ></textarea>
+          <button class="btn btn-primary mt-3 w-full" onclick="Docs.analyze()" id="btn-analyze-doc">
+            <i data-lucide="sparkles" style="width:16px;height:16px;"></i>
+            Analyze with AI
+          </button>
+        </div>
+        <div class="doc-results" id="doc-results">
+          <div class="empty-state">
+            <div class="empty-state-icon"><i data-lucide="file-text"></i></div>
+            <h3>Doc Analyzer</h3>
+            <p>Paste any document and get instant AI-powered analysis with summaries, insights, and action items.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ============================================
+     COMMAND BAR OVERLAY
+     ============================================ -->
+<div class="command-bar-overlay" id="command-bar-overlay" onclick="App.closeCommandBar(event)">
+  <div class="command-bar" onclick="event.stopPropagation()">
+    <div class="command-bar-input-wrap">
+      <span class="icon">⚡</span>
+      <input
+        type="text"
+        class="command-bar-input"
+        id="command-bar-input"
+        placeholder="Type a command or ask AI anything..."
+        onkeydown="App.handleCommandBarKey(event)"
+      >
+    </div>
+    <div class="command-bar-results" id="command-bar-results">
+      <div class="command-bar-result" data-action="tasks" onclick="App.commandAction('tasks')">
+        <span class="icon"><i data-lucide="zap" style="width:16px;height:16px;"></i></span>
+        <span class="label">Open Task Board</span>
+        <span class="shortcut">Tasks</span>
+      </div>
+      <div class="command-bar-result" data-action="planner" onclick="App.commandAction('planner')">
+        <span class="icon"><i data-lucide="calendar" style="width:16px;height:16px;"></i></span>
+        <span class="label">Open Focus Planner</span>
+        <span class="shortcut">Planner</span>
+      </div>
+      <div class="command-bar-result" data-action="meetings" onclick="App.commandAction('meetings')">
+        <span class="icon"><i data-lucide="brain" style="width:16px;height:16px;"></i></span>
+        <span class="label">Open Meeting Brain</span>
+        <span class="shortcut">Meetings</span>
+      </div>
+      <div class="command-bar-result" data-action="content" onclick="App.commandAction('content')">
+        <span class="icon"><i data-lucide="pen-tool" style="width:16px;height:16px;"></i></span>
+        <span class="label">Open Content Studio</span>
+        <span class="shortcut">Content</span>
+      </div>
+      <div class="command-bar-result" data-action="docs" onclick="App.commandAction('docs')">
+        <span class="icon"><i data-lucide="file-text" style="width:16px;height:16px;"></i></span>
+        <span class="label">Open Doc Analyzer</span>
+        <span class="shortcut">Docs</span>
+      </div>
+      <div class="command-bar-result" data-action="ai" onclick="App.commandAction('ai')">
+        <span class="icon"><i data-lucide="bot" style="width:16px;height:16px;"></i></span>
+        <span class="label">Ask AI anything...</span>
+        <span class="shortcut">Enter</span>
+      </div>
+    </div>
+    <div class="command-bar-footer">
+      <span><kbd>↑↓</kbd> Navigate</span>
+      <span><kbd>↵</kbd> Select</span>
+      <span><kbd>Esc</kbd> Close</span>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toast-container"></div>
+
+<!-- Scripts -->
+<script src="js/utils.js"></script>
+<script src="js/ai-engine.js"></script>
+<script src="js/tasks.js"></script>
+<script src="js/planner.js"></script>
+<script src="js/meetings.js"></script>
+<script src="js/content.js"></script>
+<script src="js/docs.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
