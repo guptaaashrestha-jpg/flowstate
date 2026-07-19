@@ -389,7 +389,7 @@
     </nav>
 
     <div class="sidebar-footer">
-      <button class="sidebar-footer-btn" onclick="App.backToLanding()">
+      <button class="sidebar-footer-btn" onclick="App.backToLanding()" aria-label="Back to Home">
         <i data-lucide="arrow-left"></i>
         <span>Back to Home</span>
       </button>
@@ -405,7 +405,7 @@
         <h1 id="page-title">Dashboard</h1>
         <p class="page-header-sub" id="page-subtitle">Welcome back. Here's your productivity overview.</p>
       </div>
-      <button class="command-bar-trigger" id="command-bar-trigger" onclick="App.openCommandBar()">
+      <button class="command-bar-trigger" id="command-bar-trigger" onclick="App.openCommandBar()" aria-label="Open Command Bar">
         <i data-lucide="search" style="width:16px;height:16px;"></i>
         <span>AI Command Bar...</span>
         <kbd>Ctrl+K</kbd>
@@ -481,7 +481,7 @@
           <i data-lucide="sparkles" style="width:16px;height:16px;"></i>
           AI Parse
         </button>
-        <button class="btn btn-secondary" onclick="TaskBoard.addManualTask()" id="btn-add-manual">
+        <button class="btn btn-secondary" onclick="TaskBoard.addManualTask()" id="btn-add-manual" aria-label="Add manual task">
           <i data-lucide="plus" style="width:16px;height:16px;"></i>
           Add
         </button>
@@ -630,11 +630,11 @@
           <div class="content-preview-header">
             <span class="font-display" style="font-size:0.9rem;font-weight:700;">Preview</span>
             <div class="flex gap-2">
-              <button class="btn btn-ghost btn-sm" onclick="Content.copy()" id="btn-copy-content">
+              <button class="btn btn-ghost btn-sm" onclick="Content.copy()" id="btn-copy-content" aria-label="Copy to clipboard">
                 <i data-lucide="copy" style="width:14px;height:14px;"></i>
                 Copy
               </button>
-              <button class="btn btn-ghost btn-sm" onclick="Content.regenerate()" id="btn-regen-content">
+              <button class="btn btn-ghost btn-sm" onclick="Content.regenerate()" id="btn-regen-content" aria-label="Regenerate content">
                 <i data-lucide="refresh-cw" style="width:14px;height:14px;"></i>
                 Redo
               </button>
